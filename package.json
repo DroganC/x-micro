@@ -1,0 +1,43 @@
+{
+  "private": true,
+  "author": "chenlong <chenlong@yunlizhihui.com>",
+  "scripts": {
+    "build": "umi build",
+    "dev": "umi dev",
+    "postinstall": "umi setup",
+    "prepare": "husky install",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown",
+    "*.{js,jsx,ts,tsx,css,less}": [
+      "umi lint"
+    ]
+  },
+  "dependencies": {
+    "antd": "^5.10.2",
+    "umi": "^4.0.12"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@umijs/lint": "^4.0.87",
+    "axios": "^1.6.0",
+    "eslint": "^8.52.0",
+    "father": "^4.3.6",
+    "husky": "^8",
+    "js-cookie": "^3.0.5",
+    "lint-staged": "^13.3.0",
+    "lodash": "^4.17.21",
+    "mobx": "^6.10.2",
+    "mobx-react-lite": "^4.0.5",
+    "prettier": "^2",
+    "prettier-plugin-organize-imports": "^3.2.2",
+    "prettier-plugin-packagejson": "^2.4.3",
+    "qs": "^6.11.2",
+    "react-use": "^17.4.0",
+    "stylelint": "^15.11.0",
+    "typescript": "^4"
+  }
+}
