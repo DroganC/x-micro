@@ -1,1 +1,32 @@
 @import url('./styles/normalize.css');
+@import url('./styles/font.css');
+
+#root,
+.bd-app {
+  width: 100%;
+  height: 100%;
+  background-color: #f0f2f9;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px rgba(236, 236, 236, 10%);
+  background-color: #d9d9d9;
+
+  &:hover {
+    transition: all 1s ease 0;
+    opacity: 1;
+    background-color: #bfbfbf;
+  }
+}
+
+*::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(236, 236, 236, 10%);
+  border-radius: 4px;
+  background-color: transparent;
+}

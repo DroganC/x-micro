@@ -1,5 +1,5 @@
 import { defineConfig } from 'umi';
-import { addDefine, isProd } from './custome';
+import { addAntd, addDefine, isProd } from './custome';
 import routes from './layout';
 
 const configs = defineConfig({
@@ -10,5 +10,6 @@ const configs = defineConfig({
 });
 
 addDefine(configs);
+addAntd(configs);
 
 export default configs;

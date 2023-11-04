@@ -28,3 +28,11 @@ export const addExternals = (config) => {
   // config.externals["react"]="React";
   // config.externals["react-dom"]="ReactDOM"
 };
+
+export const addAntd = (config) => {
+  (config.plugins ??= []).push('@umijs/plugins/dist/antd');
+  config.antd = {
+    appConfig: {},
+    configProvider: {},
+  };
+};
