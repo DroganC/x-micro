@@ -10,12 +10,6 @@
     "setup": "umi setup",
     "start": "npm run dev"
   },
-  "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown",
-    "*.{js,jsx,ts,tsx,less}": [
-      "umi lint --eslint-only --stylelint-only --cssinjs --fix"
-    ]
-  },
   "dependencies": {
     "@emotion/styled": "^11.11.0",
     "antd": "^5.10.2",
