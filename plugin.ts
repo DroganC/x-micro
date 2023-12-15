@@ -21,6 +21,24 @@ export default (api: IApi) => {
             window.location.replace(window.location.href);
             }
         });
+
+
+        // function zoom() {
+        //   const body = document.body;
+        //   const ratio = String(1 / window.devicePixelRatio);
+        //   body.style.setProperty('zoom', ratio);
+        //   body.style.setProperty('--zoom', ratio);
+        //   return ratio;
+        // }
+
+        // window.onload = function(){
+        //   zoom();
+        //   const style = document.createElement("style");
+        //   const cssText = 'div[data-echarts] canvas { zoom: calc(1 / var(--zoom)); transform: scale(var(--zoom)); transform-origin:0 0;}  a {color:red}';
+        //   style.appendChild(document.createTextNode(cssText));
+        //   document.head.appendChild(style);
+        // };
+        // window.onresize = zoom;
     `;
   });
 };

@@ -25,8 +25,12 @@ export const addDefine = (config) => {
 
 export const addExternals = (config) => {
   config.externals ??= {};
-  // config.externals["react"]="React";
-  // config.externals["react-dom"]="ReactDOM"
+  config.externals['react'] = 'var window.React';
+  config.externals['react-dom'] = 'var window.ReactDOM';
+  config.externals['antd'] = 'var window.antd';
+  config.externals['@ant-design/icons'] = 'var window.icons';
+  config.externals['dayjs'] = 'var window.dayjs';
+  config.externals['ahooks'] = 'var window.ahooks';
 };
 
 export const addAntd = (config) => {

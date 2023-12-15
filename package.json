@@ -3,6 +3,8 @@
   "author": "chenlong <chenlong@yunlizhihui.com>",
   "scripts": {
     "build": "umi build",
+    "build-libs": "father build",
+    "build-libs-dev": "father dev",
     "clean": "umi mfsu remove --all",
     "dev": "umi dev",
     "postinstall": "umi setup",

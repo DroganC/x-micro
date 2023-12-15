@@ -8,6 +8,10 @@
  */
 export const basicRoutes = [
   {
+    path: '/',
+    redirect: '/demo',
+  },
+  {
     path: '/demo',
     component: '@/pages/demo',
   },

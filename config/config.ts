@@ -1,5 +1,5 @@
 import { defineConfig } from 'umi';
-import { addAntd, addDefine, isProd } from './custome';
+import { addAntd, addDefine, addExternals, isProd } from './custome';
 import routes from './layout';
 
 const configs = defineConfig({
@@ -7,9 +7,11 @@ const configs = defineConfig({
   fastRefresh: true,
   devtool: isProd ? false : 'source-map',
   routes,
+  headScripts: ['/build-react.min.js', '/build-vendors.min.js'],
 });
 
 addDefine(configs);
 addAntd(configs);
+addExternals(configs);
 
 export default configs;
