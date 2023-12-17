@@ -1,3 +1,5 @@
+import { preLoadUrl } from '../plugin';
+
 export const isProd = process.env.NODE_ENV === 'production';
 
 export const getEnvConfig = (file: string = process.env.NODE_ENV!) => {
@@ -31,6 +33,8 @@ export const addExternals = (config) => {
   config.externals['@ant-design/icons'] = 'var window.icons';
   config.externals['dayjs'] = 'var window.dayjs';
   config.externals['ahooks'] = 'var window.ahooks';
+  config.headScripts ??= [];
+  config.headScripts.push(...preLoadUrl);
 };
 
 export const addAntd = (config) => {

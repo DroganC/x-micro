@@ -8,7 +8,18 @@
  */
 import { IApi } from 'umi';
 
+export const preLoadUrl = ['/vendor/react.min.js', '/vendor/vendors.min.js'];
+
 export default (api: IApi) => {
+  //
+  api.addHTMLLinks(() =>
+    preLoadUrl.map((href) => ({
+      href,
+      rel: 'preload',
+      as: 'stript',
+    })),
+  );
+
   // 增加错误处理
   api.addHTMLHeadScripts(() => {
     return `

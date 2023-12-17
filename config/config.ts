@@ -7,7 +7,9 @@ const configs = defineConfig({
   fastRefresh: true,
   devtool: isProd ? false : 'source-map',
   routes,
-  headScripts: ['/build-react.min.js', '/build-vendors.min.js'],
+  esbuildMinifyIIFE: true,
+  mfsu: {},
+  // mfsu:false
 });
 
 addDefine(configs);
