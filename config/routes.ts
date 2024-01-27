@@ -17,6 +17,13 @@ export const basicRoutes = [
   },
 ];
 
+export const lowcodeRoutes = [
+  {
+    path: '/lowcode',
+    component: '@/pages/demo',
+  },
+];
+
 export const oauthRoutes = [
   {
     path: '/oauth/login',

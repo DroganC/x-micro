@@ -7,13 +7,18 @@
  * @FilePath: /x-micro/config/layout.ts
  */
 
-import { basicRoutes, oauthRoutes } from './routes';
+import { basicRoutes, lowcodeRoutes, oauthRoutes } from './routes';
 
 export default [
   {
     path: '/',
     component: '@/layouts/private',
     routes: [...basicRoutes],
+  },
+  {
+    path: '/lowcode',
+    component: '@/layouts/lowcode',
+    routes: [...lowcodeRoutes],
   },
   {
     path: '/oauth',
