@@ -39,7 +39,7 @@
     "prettier-plugin-packagejson": "^2.4.3",
     "qs": "^6.11.2",
     "react-use": "^17.4.0",
-    "stylelint": "^15.11.0",
+    "stylelint": "^14",
     "typescript": "^4"
   }
 }
