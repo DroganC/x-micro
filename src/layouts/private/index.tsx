@@ -1,6 +1,7 @@
 import { Container, Content, Header, Main, Sider } from '@/components/Layouts';
+import ContentTabs from '@/components/Layouts/Content.Tabs';
 import { GlobalContext } from '@/constant/context';
-import { Outlet } from 'umi';
+import { observer } from 'mobx-react-lite';
 function Private() {
   return (
     <GlobalContext.Provider value={null}>
@@ -9,7 +10,7 @@ function Private() {
         <Main>
           <Sider />
           <Content>
-            <Outlet />
+            <ContentTabs />
           </Content>
         </Main>
       </Container>
@@ -17,4 +18,4 @@ function Private() {
   );
 }
 
-export default Private;
+export default observer(Private);

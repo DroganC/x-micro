@@ -7,7 +7,8 @@ export const HeaderWrapper = styled.div`
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  box-shadow: 0 2px 6px 0 rgba(52, 52, 52, 0.03);
+  border-block-end: 1px solid rgba(5, 5, 5, 0.06);
+  background-color: rgba(255, 255, 255, 0.6);
 `;
 
 export const HeaderLeft = styled.div`

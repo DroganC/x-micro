@@ -1,10 +1,21 @@
-/*
- * @Author: Droganc
- * @Date: 2023-11-01 20:52:07
- * @LastEditTime: 2023-11-01 20:54:20
- * @LastEditors: Droganc
- * @Description:
- * @FilePath: /x-micro/src/store/index.ts
- */
-export * from './modules/globalStore';
-export * from './modules/userStore';
+import { makeAutoObservable } from 'mobx';
+import Layout from './modules/layout';
+import Menus from './modules/menus';
+import User from './modules/user';
+class Global {
+  user: User = new User();
+  menus: Menus = new Menus();
+  layout: Layout = new Layout();
+
+  constructor() {
+    makeAutoObservable(this, undefined, { autoBind: true });
+  }
+
+  *inital(render) {
+    yield this.user.fetchUser();
+    yield this.menus.fetchMenus();
+    return render();
+  }
+}
+
+export default new Global();

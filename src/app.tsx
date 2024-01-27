@@ -8,6 +8,7 @@
  */
 import { ConfigProvider } from 'antd';
 import { iconPrefixCls, prefixCls } from './constant/constant';
+import store from './store';
 import token from './styles/token';
 
 ConfigProvider.config({
@@ -15,9 +16,7 @@ ConfigProvider.config({
   iconPrefixCls,
 });
 
-export const render = (oldRender) => {
-  oldRender();
-};
+export const render = store.inital;
 
 export const rootContainer = (container) => {
   return <ConfigProvider theme={{ ...token }}>{container}</ConfigProvider>;
