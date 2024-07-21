@@ -7,49 +7,18 @@
  * @FilePath: /x-micro/plugin.ts
  */
 import { IApi } from 'umi';
-
-export const preLoadUrl = ['/vendor/react.min.js', '/vendor/vendors.min.js'];
+import addErrorlisten from './plugins/addErrorlisten';
+import addGlobalStyle from './plugins/addGlobalStyle';
+import addGlobalVars from './plugins/addGlobalVars';
+import addLibs from './plugins/addLibs';
+import addLoading from './plugins/addLoading';
 
 export default (api: IApi) => {
-  //
-  api.addHTMLLinks(() =>
-    preLoadUrl.map((href) => ({
-      href,
-      rel: 'preload',
-      as: 'stript',
-    })),
-  );
-
-  // 增加错误处理
-  api.addHTMLHeadScripts(() => {
-    return `
-        window.addEventListener('error', function (event) {
-            if (
-            event.message &&
-            String(event.message).includes('chunk') &&
-            String(event.message).includes('falied')
-            ) {
-            window.location.replace(window.location.href);
-            }
-        });
-
-
-        // function zoom() {
-        //   const body = document.body;
-        //   const ratio = String(1 / window.devicePixelRatio);
-        //   body.style.setProperty('zoom', ratio);
-        //   body.style.setProperty('--zoom', ratio);
-        //   return ratio;
-        // }
-
-        // window.onload = function(){
-        //   zoom();
-        //   const style = document.createElement("style");
-        //   const cssText = 'div[data-echarts] canvas { zoom: calc(1 / var(--zoom)); transform: scale(var(--zoom)); transform-origin:0 0;}  a {color:red}';
-        //   style.appendChild(document.createTextNode(cssText));
-        //   document.head.appendChild(style);
-        // };
-        // window.onresize = zoom;
-    `;
-  });
+  // 错误监听
+  addErrorlisten(api);
+  // 全局css
+  addGlobalStyle(api);
+  addGlobalVars(api);
+  addLibs(api);
+  addLoading(api);
 };

@@ -21,9 +21,3 @@ export const render = store.inital;
 export const rootContainer = (container) => {
   return <ConfigProvider theme={{ ...token }}>{container}</ConfigProvider>;
 };
-
-export const antd = (memo) => {
-  memo.prefixCls = prefixCls;
-  memo.iconPrefixCls = iconPrefixCls;
-  return memo;
-};

@@ -1,4 +1,5 @@
 {
+  "version": "1.0.0",
   "private": true,
   "author": "chenlong <chenlong@yunlizhihui.com>",
   "scripts": {
@@ -11,6 +12,11 @@
     "prepare": "husky install",
     "setup": "umi setup",
     "start": "npm run dev"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
@@ -42,6 +48,6 @@
     "qs": "^6.11.2",
     "react-use": "^17.4.0",
     "stylelint": "^14",
-    "typescript": "^4"
+    "typescript": "^5.5.3"
   }
 }

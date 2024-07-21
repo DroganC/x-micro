@@ -10,19 +10,5 @@
 import { defineConfig } from 'father';
 
 export default defineConfig({
-  umd: {
-    entry: {
-      './scripts/react': {},
-      './scripts/vendors': {
-        externals: {
-          react: 'var window.React',
-          'react-dom': 'var window.ReactDOM',
-          dayjs: 'var window.dayjs',
-        },
-      },
-    },
-    output: {
-      path: './public/vendor',
-    },
-  },
+  umd: {},
 });
